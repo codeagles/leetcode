@@ -27,13 +27,13 @@ import java.util.HashMap;
  * //
  * // Related Topics 数组 哈希表
  */
-public class TwoNums {
+public class TwoSum {
 
     //0. 暴力解法 双循环
     //TODO
 
     //1. 双指针夹逼方法
-    public static int[] twoSum(int[] nums, int target) {
+    public static int[] twoSumSolution1(int[] nums, int target) {
 
         int[] res = new int[2];
         int start=0, end =nums.length-1;
@@ -76,7 +76,7 @@ public class TwoNums {
     }
 
     //2. hash表方式
-    public static int[] twoSum1(int[] nums, int target) {
+    public static int[] twoSumSolution2(int[] nums, int target) {
         HashMap<Integer, Integer> hashMap = new HashMap<>();
         for(int i=0;i<nums.length;i++){
             Integer res = hashMap.get(target - nums[i]);
@@ -91,7 +91,9 @@ public class TwoNums {
     public static void main(String[] args) {
         int[] nums = {1,2,3,3};
         int target = 6;
-        int[] ints = twoSum1(nums, target);
-        System.out.println(Arrays.toString(ints));
+        int[] ints1 = twoSumSolution1(nums, target);
+        int[] ints2 = twoSumSolution2(nums, target);
+        System.out.println(Arrays.toString(ints1));
+        System.out.println(Arrays.toString(ints2));
     }
 }
